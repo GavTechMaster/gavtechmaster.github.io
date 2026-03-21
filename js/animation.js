@@ -4,7 +4,7 @@ var frame = 0;
 
 function gavinwareAnimation() {
     var gavinwareSpritesheet = document.getElementById("gavinware-animation");
-    gavinwareSpritesheet.style.backgroundPosition = `-${x * 75}px -${y * 85}px`;
+    gavinwareSpritesheet.style.backgroundPosition = `-${x * 75}px -${y * 80}px`;
     if (frame < 15) {
         if (x < 6) {
             x++;
