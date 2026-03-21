@@ -25,6 +25,10 @@ header {
   align-items: center;
 }
 
+header a {
+  color: orange;
+}
+
 .pixelated {
   image-rendering: pixelated; 
   height: auto; 
