@@ -48,6 +48,7 @@ a header {
 
 #scoreboard-list li nav a {
   color: orange;
+  text-decoration: none;
   margin: 10px;
   font-weight: 10px;
 }
