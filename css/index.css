@@ -20,6 +20,10 @@ body {
   image-rendering: pixelated; 
 }
 
+.no-decoration {
+ text-decoration: none; 
+}
+
 a header {
   display: flex;
   border: 5px solid orange;
