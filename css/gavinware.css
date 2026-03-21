@@ -3,22 +3,6 @@
     src: url('/../FFFFORWA.TTF') format('truetype');
 }
 
-/* Styles applied when the viewport width is 600px or less */
-@media screen and (max-width: 700px) {
-  #title {
-    top: auto;
-  }
-}
-
-/* Styles applied when the viewport width is 601px or more */
-@media screen and (min-width: 701px) {
-  #title {
-    position: relative;
-    top: 50%;
-    transform: translateY(37.5%);
-  }
-}
-
 #gavinware-animation {
   width: 75px;
   height: 85px;
@@ -38,6 +22,7 @@ a header {
   border-radius: 10px;
   background-color: blueviolet;
   justify-content: space-around;
+  align-items: center;
 }
 
 .pixelated {
