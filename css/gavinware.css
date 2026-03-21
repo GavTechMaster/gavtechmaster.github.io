@@ -24,10 +24,6 @@ body {
   font-family: 'RetroText', sans-serif;
 }
 
-.pixelated {
-  image-rendering: pixelated; 
-}
-
 header {
   display: flex;
   border: 5px solid orange;
@@ -36,26 +32,9 @@ header {
   justify-content: space-around;
 }
 
-#scoreboard-list {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-}
-
-#scoreboard-list li nav {
-  display: flex;
-  justify-content: center;
-}
-
-#scoreboard-list li nav a {
-  font-size: larger;
-  font-weight: 100;
-  position: relative;
-  top: 50%;
-  transform: translateY(37.5%);
-  color: orange;
-  margin-left: 20px;
-  margin-right: 20px;
+.pixelated {
+  image-rendering: pixelated; 
+  height: auto; 
 }
 
 h1, h2 {
