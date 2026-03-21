@@ -19,6 +19,14 @@
   }
 }
 
+#gavinware-animation {
+  width: 75px;
+  height: 85px;
+  image-rendering: pixelated;
+  background-image: url('../images/gavinware_boombox.png');
+  background-position: 0px 0px;
+}
+
 body {
   background-color: aqua;
   font-family: 'RetroText', Impact;
