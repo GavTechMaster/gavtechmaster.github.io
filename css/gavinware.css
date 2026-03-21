@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'RetroText';
-    src: url('../FFFFORWA.ttf') format('truetype');
+    src: url('../FFFFORWA.TTF') format('truetype');
 }
 
 /* Styles applied when the viewport width is 600px or less */
