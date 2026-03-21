@@ -24,7 +24,7 @@ body {
   font-family: 'RetroText', Impact;
 }
 
-header {
+a header {
   display: flex;
   border: 5px solid orange;
   border-radius: 10px;
