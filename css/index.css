@@ -32,23 +32,20 @@ a header {
 #scoreboard-list {
   display: flex;
   justify-content: center;
+  align-items: center;
   list-style-type: none;
 }
 
 #scoreboard-list li nav {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #scoreboard-list li nav a {
-  font-size: larger;
-  font-weight: 100;
-  position: relative;
-  top: 50%;
-  transform: translateY(37.5%);
   color: orange;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 10px;
+  font-weight: 10px;
 }
 
 h1, h2 {
