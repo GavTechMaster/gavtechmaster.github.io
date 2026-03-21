@@ -20,10 +20,6 @@ body {
   image-rendering: pixelated; 
 }
 
-.no-decoration {
- text-decoration: none; 
-}
-
 a header {
   display: flex;
   border: 5px solid orange;
@@ -48,7 +44,6 @@ a header {
 
 #scoreboard-list li nav a {
   color: orange;
-  text-decoration: none;
   margin: 10px;
   font-weight: 10px;
 }

@@ -16,10 +16,6 @@ body {
   font-family: 'RetroText', Impact;
 }
 
-.no-decoration {
- text-decoration: none; 
-}
-
 a header {
   display: flex;
   border: 5px solid orange;
