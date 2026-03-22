@@ -40,13 +40,13 @@ header a {
   list-style-type: none;
 }
 
-#scoreboard-list li nav {
+#scoreboard-list li a nav {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#scoreboard-list li nav a {
+#scoreboard-list li a nav h2 {
   color: orange;
   margin: 10px;
   font-weight: 10px;
