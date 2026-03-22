@@ -40,6 +40,10 @@ header a {
   list-style-type: none;
 }
 
+#scoreboard-list li a {
+  text-decoration: none;
+}
+
 #scoreboard-list li a nav {
   display: flex;
   justify-content: center;
