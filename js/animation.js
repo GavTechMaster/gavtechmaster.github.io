@@ -25,4 +25,4 @@ function gavinwareAnimation() {
     }
 }
 
-setInterval(gavinwareAnimation, 1000 / 30);
+setInterval(gavinwareAnimation, 1000 / 30); // 1000ms / 30 is 30 fps
