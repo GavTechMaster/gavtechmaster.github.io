@@ -17,42 +17,46 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-// Get a reference to the specific path in your database where the scoreboard data is stored.
-// This is the MOST IMPORTANT part to ensure your scoreboard links correctly.
-// You need to replace 'my_scoreboard_data' with the actual path in your Realtime Database.
-// For example:
-// - If your data is directly at the root, use ref(database, '/');
-// - If your data is under a node named 'scores', use ref(database, 'scores');
-// - If your data is under a node named 'game1/scores', use ref(database, 'game1/scores');
-const scoreboardRef = ref(database, '/'); // <--- ADJUST THIS PATH!
+const scoreboardRef = ref(database, '/'); 
 
-// Listen for real-time data changes
 onValue(scoreboardRef, (snapshot) => {
   const data = snapshot.val(); // Get the data as a JavaScript object
 
   if (data) {
-    console.log("Scoreboard data received:", data); // For debugging: see what data comes in
+    console.log("Scoreboard data received:", data);
 
-    // Update scores
-    // Ensure your HTML elements have IDs like 'score_1', 'score_2', etc.
-    // The code assumes the 'data' object directly contains properties like 'score_1', 'score_2', etc.
-    document.getElementById('score_1').textContent = data.score_1 !== undefined ? data.score_1 : '--';
-    document.getElementById('score_2').textContent = data.score_2 !== undefined ? data.score_2 : '--';
-    document.getElementById('score_3').textContent = data.score_3 !== undefined ? data.score_3 : '--';
-    document.getElementById('score_4').textContent = data.score_4 !== undefined ? data.score_4 : '--';
-    document.getElementById('score_5').textContent = data.score_5 !== undefined ? data.score_5 : '--';
+    for (let i = 1; i <= 5; i++) {
+        const nameElement = document.getElementById(`name_${i}`);
+        const scoreElement = document.getElementById(`score_${i}`);
 
-    // If you add HTML elements for score names (e.g., <span id="name_1">),
-    // you could re-introduce logic like:
-    // document.getElementById('name_1').textContent = data.name_1 !== undefined ? data.name_1 : 'Player 1';
+        if (nameElement) {
+            // --- UPDATED LOGIC FOR NAMES ---
+            // Access names from the 'score_names' array in your database
+            // Use (i - 1) because array indices are 0-based, and your IDs are 1-based.
+            const playerName = data.score_names && data.score_names[i - 1] !== undefined
+                               ? data.score_names[i - 1]
+                               : `Player ${i}`;
+            nameElement.textContent = `${playerName}:`;
+        }
+
+        if (scoreElement) {
+            // Fetch the score from the database. Still assuming properties like data.score_1, data.score_2, etc.
+            scoreElement.textContent = data[`score_${i}`] !== undefined ? data[`score_${i}`] : '--';
+        }
+    }
 
   } else {
     console.log("No scoreboard data available at this path.");
     // Clear display or show default values if no data is present
     for (let i = 1; i <= 5; i++) {
+        const nameElement = document.getElementById(`name_${i}`);
         const scoreElement = document.getElementById(`score_${i}`);
+        if (nameElement) {
+            // Default name if no data, or if score_names array is empty/undefined
+            nameElement.textContent = `Player ${i}`;
+        }
         if (scoreElement) {
-            scoreElement.textContent = '--';
+            scoreElement.textContent = '--'; // Default if no score in DB
         }
     }
   }
